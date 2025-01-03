@@ -21,7 +21,6 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user = intent.getParcelableExtra<ApiResponse>(EXTRA_DETAIL)
-
         user?.let {
             binding.apply {
                 ivProfile.setImageFromUrl(this@DetailActivity, it.avatar.toString())
@@ -48,6 +47,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun toolbarSetup() {
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)

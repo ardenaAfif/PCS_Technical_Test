@@ -1,4 +1,4 @@
-package id.pcs.pcstechnicaltest.presentation.ui
+package id.pcs.pcstechnicaltest.presentation.ui.home
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.PCSTechnicalTest" parent="Theme.Material3.DayNight">
         <!-- Customize your dark theme here. -->
-        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorPrimary">@color/background_dark_800</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimaryContainer">@color/secondary_dark</item>
         <item name="colorOnPrimaryContainer">@color/white</item>

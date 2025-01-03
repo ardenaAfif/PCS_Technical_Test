@@ -11,6 +11,7 @@
     <color name="darker_grey_dark">#808080</color>
     <color name="background">#FFFFFFFF</color>
     <color name="background_dark">#121212</color>
+    <color name="background_dark_800">#1B1B1B</color>
     <color name="error">#B00020</color>
     <color name="error_dark">#CF6679</color>
     <color name="error_container">#F9DEDC</color>

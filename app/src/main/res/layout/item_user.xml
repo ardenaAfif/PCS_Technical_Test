@@ -22,7 +22,7 @@
         <ImageView
             android:id="@+id/ivProfile"
             android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_height="match_parent"
             android:contentDescription="@string/profile_image"
             android:src="@drawable/ic_launcher_foreground" />
 
@@ -48,8 +48,8 @@
                 android:id="@+id/tvDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:textSize="16sp"
+                android:textColor="?attr/colorOnSurface"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="12 November 2024" />

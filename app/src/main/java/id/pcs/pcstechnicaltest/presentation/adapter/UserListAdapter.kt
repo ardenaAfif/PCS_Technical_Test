@@ -1,6 +1,7 @@
 package id.pcs.pcstechnicaltest.presentation.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -9,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import id.pcs.pcstechnicaltest.data.UserRepository
 import id.pcs.pcstechnicaltest.data.remote.ApiResponse
 import id.pcs.pcstechnicaltest.databinding.ItemUserBinding
+import id.pcs.pcstechnicaltest.presentation.ui.detail.DetailActivity
+import id.pcs.pcstechnicaltest.presentation.ui.detail.DetailActivity.Companion.EXTRA_DETAIL
 import id.pcs.pcstechnicaltest.utils.FormatHelper
 import id.pcs.pcstechnicaltest.utils.FormatHelper.setImageFromUrl
 
@@ -35,6 +38,13 @@ class UserListAdapter(private val context: Context) :
                 tvName.text = user.name
                 tvDate.text = FormatHelper.formatDate(user.createdAt ?: "")
                 ivProfile.setImageFromUrl(context, user.avatar.toString())
+
+                root.setOnClickListener {
+                    Intent(context, DetailActivity::class.java).also { intent ->
+                        intent.putExtra(EXTRA_DETAIL, user)
+                        context.startActivity(intent)
+                    }
+                }
             }
         }
     }

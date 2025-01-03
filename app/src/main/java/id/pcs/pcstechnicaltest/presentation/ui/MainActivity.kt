@@ -1,10 +1,12 @@
-package id.pcs.pcstechnicaltest
+package id.pcs.pcstechnicaltest.presentation.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import id.pcs.pcstechnicaltest.R
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

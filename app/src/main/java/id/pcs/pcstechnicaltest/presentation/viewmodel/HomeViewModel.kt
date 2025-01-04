@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.pcs.pcstechnicaltest.data.UserRepository
 import id.pcs.pcstechnicaltest.data.remote.ApiResponse
+import id.pcs.pcstechnicaltest.domain.GetUserListUseCase
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val userRepository: UserRepository
+    private val userListUseCase: GetUserListUseCase
 ): ViewModel() {
 
     private val _userData = MutableLiveData<List<ApiResponse>>()
@@ -32,7 +33,7 @@ class HomeViewModel @Inject constructor(
 
     private fun fetchData() {
         _loading.value = true
-        userRepository.getAllData().enqueue(object : Callback<List<ApiResponse>> {
+        userListUseCase.execute().enqueue(object : Callback<List<ApiResponse>> {
             override fun onResponse(
                 call: Call<List<ApiResponse>>,
                 response: Response<List<ApiResponse>>

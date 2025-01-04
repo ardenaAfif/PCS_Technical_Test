@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import id.pcs.pcstechnicaltest.BuildConfig
 import id.pcs.pcstechnicaltest.data.UserRepository
 import id.pcs.pcstechnicaltest.data.remote.ApiService
+import id.pcs.pcstechnicaltest.domain.GetUserListUseCase
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -34,5 +35,11 @@ object NetworkModule {
     @Singleton
     fun provideUserRepository(apiService: ApiService): UserRepository {
         return UserRepository(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetUserListUseCase(userRepository: UserRepository): GetUserListUseCase {
+        return GetUserListUseCase(userRepository)
     }
 }

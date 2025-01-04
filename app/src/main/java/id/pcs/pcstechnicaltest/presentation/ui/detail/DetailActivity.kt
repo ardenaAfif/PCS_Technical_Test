@@ -24,28 +24,32 @@ class DetailActivity : AppCompatActivity() {
 
         val user = intent.getParcelableExtra<ApiResponse>(EXTRA_DETAIL)
         user?.let {
-            binding.apply {
-                ivProfile.setImageFromUrl(this@DetailActivity, it.avatar.toString())
-
-                // Pemisahan nama
-                val (firstName, lastName) = splitName(it.name ?: "")
-                tvFirstName.text = getString(R.string.name_format, firstName)
-                tvLastName.text = getString(R.string.name_format, lastName)
-
-                // Penggabungan alamat
-                val address = getString(
-                    R.string.address_format,
-                    it.addressNo ?: "",
-                    it.street ?: "",
-                    it.city ?: "",
-                    it.zipCode ?: "",
-                    it.country ?: ""
-                )
-                tvAddress.text = address
-            }
+            setupUserDetails(it)
         }
 
         toolbarSetup()
+    }
+
+    private fun setupUserDetails(user: ApiResponse) {
+        binding.apply {
+            ivProfile.setImageFromUrl(this@DetailActivity, user.avatar.toString())
+
+            // Pemisahan nama
+            val (firstName, lastName) = splitName(user.name ?: "")
+            tvFirstName.text = getString(R.string.name_format, firstName)
+            tvLastName.text = getString(R.string.name_format, lastName)
+
+            // Penggabungan alamat
+            val address = getString(
+                R.string.address_format,
+                user.addressNo ?: "",
+                user.street ?: "",
+                user.city ?: "",
+                user.zipCode ?: "",
+                user.country ?: ""
+            )
+            tvAddress.text = address
+        }
     }
 
     private fun toolbarSetup() {

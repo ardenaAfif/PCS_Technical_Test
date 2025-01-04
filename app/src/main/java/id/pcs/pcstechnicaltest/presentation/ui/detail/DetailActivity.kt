@@ -1,13 +1,10 @@
 package id.pcs.pcstechnicaltest.presentation.ui.detail
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import dagger.hilt.android.AndroidEntryPoint
 import id.pcs.pcstechnicaltest.R
-import id.pcs.pcstechnicaltest.data.remote.ApiResponse
+import id.pcs.data.remote.ApiResponse
 import id.pcs.pcstechnicaltest.databinding.ActivityDetailBinding
 import id.pcs.pcstechnicaltest.utils.FormatHelper.setImageFromUrl
 import id.pcs.pcstechnicaltest.utils.FormatHelper.splitName

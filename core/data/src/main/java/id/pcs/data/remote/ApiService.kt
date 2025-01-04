@@ -1,4 +1,4 @@
-package id.pcs.pcstechnicaltest.data.remote
+package id.pcs.data.remote
 
 import retrofit2.Call
 import retrofit2.http.GET

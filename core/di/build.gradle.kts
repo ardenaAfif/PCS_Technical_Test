@@ -1,23 +1,21 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
 
 android {
-    namespace = "id.pcs.pcstechnicaltest"
+    namespace = "id.pcs.di"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "id.pcs.pcstechnicaltest"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+
+        buildConfigField("String", "API_BASE", "\"https://66b197c51ca8ad33d4f482c9.mockapi.io/\"")
     }
 
     buildTypes {
@@ -29,12 +27,12 @@ android {
             )
         }
     }
-    buildFeatures {
-        viewBinding = true
-    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        buildConfig = true
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -43,10 +41,6 @@ android {
 
 dependencies {
 
-    // Glide
-    implementation(libs.glide)
-    annotationProcessor(libs.compiler)
-
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -54,18 +48,13 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
+    implementation(project(":core:data"))
     kapt(libs.hilt.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // Dependencies from other modules
-    implementation(project(":core:data"))
-    implementation(project(":core:di"))
 }

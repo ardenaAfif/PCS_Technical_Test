@@ -1,4 +1,4 @@
-package id.pcs.pcstechnicaltest.data.remote
+package id.pcs.data.remote
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

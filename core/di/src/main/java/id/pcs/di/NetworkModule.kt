@@ -1,13 +1,12 @@
-package id.pcs.pcstechnicaltest.di
+package id.pcs.di
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import id.pcs.pcstechnicaltest.BuildConfig
-import id.pcs.pcstechnicaltest.data.UserRepository
-import id.pcs.pcstechnicaltest.data.remote.ApiService
-import id.pcs.pcstechnicaltest.domain.GetUserListUseCase
+import id.pcs.data.UserRepository
+import id.pcs.data.remote.ApiService
+import id.pcs.data.domain.GetUserListUseCase
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton

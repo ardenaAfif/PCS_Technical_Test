@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import id.pcs.pcstechnicaltest.data.UserRepository
-import id.pcs.pcstechnicaltest.data.remote.ApiResponse
+import id.pcs.data.remote.ApiResponse
 import id.pcs.pcstechnicaltest.databinding.ItemUserBinding
 import id.pcs.pcstechnicaltest.presentation.ui.detail.DetailActivity
 import id.pcs.pcstechnicaltest.presentation.ui.detail.DetailActivity.Companion.EXTRA_DETAIL
@@ -26,7 +25,6 @@ class UserListAdapter(private val context: Context) :
         override fun areContentsTheSame(oldItem: ApiResponse, newItem: ApiResponse): Boolean {
             return oldItem == newItem
         }
-
     }
 
     val differ = AsyncListDiffer(this, diffCallback)

@@ -1,7 +1,7 @@
-package id.pcs.pcstechnicaltest.data
+package id.pcs.data
 
-import id.pcs.pcstechnicaltest.data.remote.ApiResponse
-import id.pcs.pcstechnicaltest.data.remote.ApiService
+import id.pcs.data.remote.ApiResponse
+import id.pcs.data.remote.ApiService
 import retrofit2.Call
 import javax.inject.Inject
 

@@ -1,13 +1,11 @@
 package id.pcs.pcstechnicaltest.presentation.viewmodel
 
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import id.pcs.pcstechnicaltest.data.UserRepository
-import id.pcs.pcstechnicaltest.data.remote.ApiResponse
-import id.pcs.pcstechnicaltest.domain.GetUserListUseCase
+import id.pcs.data.remote.ApiResponse
+import id.pcs.data.domain.GetUserListUseCase
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
